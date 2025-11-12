@@ -1,0 +1,26 @@
+---
+title: "p8105_hw5_mb5357"
+author: "Maria Beg"
+date: "2025-11-12"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+## Problem 1
+
+
+```{r}
+
+
+
+
+
+
+
+```
+
