@@ -64,7 +64,39 @@ The plot shows that as the group size increases, the likelihood of two people sh
 
 
 
-```{r}
+## Problem 2
+
+
+```{r, cache=TRUE}
+
+
+# Function to simulate data
+
+sim_one = function(true_mu) {
+  x = rnorm(30, mean = true_mu, sd = 5)
+  t.test(x, mu = 0) |> 
+    broom::tidy() |> 
+    select(estimate, p.value)
+}
+
+
+# Simulation
+
+sim_results = 
+  expand_grid(
+  true_mu = 0:6,
+  iter = 1:5000
+) |> 
+  mutate(out = map(true_mu, sim_one)) |> 
+  unnest(out)
+
+
+# Power Calculation
+
+power_results = sim_results |> 
+  group_by(true_mu) |> 
+  summarize(power = mean(p.value < 0.05))
+
 
 
 
