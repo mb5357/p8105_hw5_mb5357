@@ -237,7 +237,7 @@ city_test |>
                     ymax = conf.high), 
                 width = 0.2) +
   labs(
-    title = "Proportion of Unsolved Homicides by City",
+    title = "Estimated Proportion of Unsolved Homicides by City with 95% Confidence Intervals",
     x = "City",
     y = "Proportion of Unsolved Homicides"
   )  +
